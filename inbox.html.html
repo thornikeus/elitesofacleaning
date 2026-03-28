@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Elite Sofa Cleaning | Fresh, Clean, Beautiful Sofas</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background: #ffffff;
+      color: #1e2f3a;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Calming blue palette - fresh cleaning vibe */
+    :root {
+      --blue-fresh: #2c7da0;
+      --blue-deep: #1f5e7e;
+      --blue-soft: #d4eaf7;
+      --blue-mist: #eef5fa;
+      --accent-gold: #f4d58c;
+      --text-dark: #1e3a4d;
+      --text-soft: #4a6f83;
+    }
+
+    /* Buttons & CTAs */
+    .btn-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--blue-fresh);
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 8px 18px rgba(44, 125, 160, 0.2);
+      letter-spacing: -0.2px;
+    }
+
+    .btn-call i {
+      font-size: 1rem;
+    }
+
+    .btn-call:hover {
+      background: var(--blue-deep);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(31, 94, 126, 0.25);
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      box-shadow: none;
+    }
+
+    .btn-outline-light:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+
+    /* Header */
+    .top-bar {
+      background: #ffffff;
+      border-bottom: 1px solid rgba(44, 125, 160, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+    }
+
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--blue-fresh);
+    }
+
+    .logo span {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #5b8c9e;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #2c5e78;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--blue-fresh);
+    }
+
+    .call-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .phone-header {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #1f5e7e;
+      text-decoration: none;
+    }
+
+    /* Hero Section - lovely blue */
+    .hero {
+      background: linear-gradient(135deg, #f0f7fc 0%, #e6f0f7 100%);
+      padding: 3rem 0 4rem 0;
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .hero-content {
+      flex: 1.2;
+    }
+
+    .hero-content h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: #1c4e6e;
+    }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      color: #4a6f83;
+      margin-bottom: 1.8rem;
+      max-width: 550px;
+      line-height: 1.5;
+    }
+
+    .service-area {
+      background: white;
+      border-radius: 60px;
+      padding: 0.6rem 1.5rem;
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--blue-fresh);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    .hero-img {
+      flex: 1;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 24px 40px -16px rgba(44, 125, 160, 0.25);
+    }
+
+    .hero-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Gallery with sofa photos */
+    .gallery {
+      padding: 4rem 0;
+      background: #ffffff;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #1c4e6e;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .photo-card {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      background: #fff;
+      border: 1px solid #e2eff5;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 36px -12px rgba(44, 125, 160, 0.2);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-card .caption {
+      padding: 1rem 1.2rem 1.2rem;
+      font-weight: 500;
+      color: #2c7da0;
+      background: white;
+      text-align: center;
+    }
+
+    /* Subpage sections */
+    .service-subpage {
+      padding: 4rem 0;
+      background: #f9fdfe;
+      border-top: 1px solid #d9eaf2;
+    }
+
+    .subpage-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .badge-icon {
+      font-size: 2.5rem;
+      color: var(--blue-fresh);
+      margin-bottom: 0.5rem;
+    }
+
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .col-text {
+      flex: 1;
+    }
+
+    .col-text h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #1f5e7e;
+    }
+
+    .col-text p {
+      color: #4f7b8f;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-top: 1.2rem;
+    }
+
+    .feature-list li {
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 500;
+      color: #2c5e78;
+    }
+
+    .feature-list i {
+      color: var(--blue-fresh);
+      font-size: 1.1rem;
+      width: 26px;
+    }
+
+    .col-img {
+      flex: 1;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 16px 28px -10px rgba(44, 125, 160, 0.2);
+    }
+
+    .col-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      min-height: 280px;
+    }
+
+    /* Bottom CTA */
+    .bottom-cta {
+      background: linear-gradient(115deg, #1f5e7e, #2c7da0);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .bottom-cta h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .bottom-cta p {
+      font-size: 1.1rem;
+      opacity: 0.92;
+      margin-bottom: 2rem;
+    }
+
+    .footer {
+      background: #0f3b4f;
+      color: #cae3ef;
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    .footer a {
+      color: #cae3ef;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 860px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-links {
+        gap: 1.8rem;
+      }
+      .hero-content h2 {
+        font-size: 2.2rem;
+      }
+      .two-col {
+        flex-direction: column;
+      }
+      .container {
+        padding: 0 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <h1>Elite Sofa Cleaning</h1>
+        <span><i class="fas fa-couch"></i> Gentle Care, Beautiful Results</span>
+      </div>
+      <div class="nav-links">
+        <a href="#" class="active" data-nav="home">Home</a>
+        <a href="#" data-nav="residential">Residential</a>
+        <a href="#" data-nav="commercial">Commercial</a>
+      </div>
+      <div class="call-header">
+        <a href="tel:+12155007939" class="phone-header"><i class="fas fa-phone-alt"></i> +1 (215) 500-7939</a>
+        <a href="tel:+12155007939" class="btn-call" style="padding: 0.6rem 1.4rem;"><i class="fas fa-phone-alt"></i> Call Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="app">
+  <!-- Hero Section -->
+  <section id="hero-section" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="service-area">
+            <i class="fas fa-map-marker-alt"></i> Philadelphia | Blue Bell | Ambler & Surrounding Areas
+          </div>
+          <h2>Your Sofa Deserves a Fresh Start</h2>
+          <p>Deep cleaning that removes stains, dirt, and odors — restoring the beauty and comfort of your favorite furniture. Professional care for every fabric type.</p>
+          <a href="tel:+12155007939" class="btn-call"><i class="fas fa-calendar-check"></i> Book Your Cleaning Today</a>
+        </div>
+        <div class="hero-img">
+          <img src="https://imgur.com/I7Ns8bc.jpg" alt="beautiful sofa cleaning service" loading="eager">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery: beautiful sofa cleaning photos -->
+  <section class="gallery">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-couch"></i> From Tired to Radiant</h2>
+      <div class="photo-grid">
+        <div class="photo-card">
+          <img src="https://imgur.com/rvrKO8l.jpg" alt="sofa deep cleaning">
+          <div class="caption">Deep steam extraction</div>
+        </div>
+        <div class="photo-card">
+          <img src="https://imgur.com/RruLrPy.jpg" alt="stain removal on sofa">
+          <div class="caption">Stain removal specialists</div>
+        </div>
+        <div class="photo-card">
+          <img src="https://imgur.com/dhBu99K.jpg" alt="clean modern sofa">
+          <div class="caption">Fresh & like-new finish</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESIDENTIAL subpage -->
+  <section id="residential-section" style="display: none;">
+    <div class="service-subpage">
+      <div class="container">
+        <div class="subpage-header">
+          <div class="badge-icon"><i class="fas fa-home"></i></div>
+          <h2 style="font-size: 2rem;">Residential Sofa Cleaning</h2>
+          <p style="color: #5b8e9f;">Revitalize your living space — safe, gentle, and effective for your family's comfort.</p>
+        </div>
+        <div class="two-col">
+          <div class="col-text">
+            <h3>Lovely Sofas, Healthy Home</h3>
+            <p>Your sofa is the heart of your home — where memories are made. Our residential service uses gentle yet powerful cleaning methods to remove everyday dirt, food stains, and pet marks, leaving your upholstery fresh and vibrant.</p>
+            <ul class="feature-list">
+              <li><i class="fas fa-check-circle"></i> Eco-friendly, family-safe solutions</li>
+              <li><i class="fas fa-tint"></i> Rapid drying technology</li>
+              <li><i class="fas fa-paw"></i> Pet stain & odor removal</li>
+              <li><i class="fas fa-clock"></i> Flexible scheduling to fit your life</li>
+            </ul>
+            <a href="tel:+12155007939" class="btn-call" style="margin-top: 1.5rem; display: inline-block;"><i class="fas fa-home"></i> Schedule Home Service</a>
+          </div>
+          <div class="col-img">
+            <img src="https://imgur.com/DrCVV03.jpg" alt="residential sofa cleaning">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMERCIAL subpage -->
+  <section id="commercial-section" style="display: none;">
+    <div class="service-subpage">
+      <div class="container">
+        <div class="subpage-header">
+          <div class="badge-icon"><i class="fas fa-building"></i></div>
+          <h2 style="font-size: 2rem;">Commercial Upholstery Care</h2>
+          <p style="color: #5b8e9f;">Professional cleaning for offices, hotels, and high-traffic spaces.</p>
+        </div>
+        <div class="two-col">
+          <div class="col-img">
+            <img src="https://imgur.com/deq8jIn.jpg" alt="commercial sofa cleaning">
+          </div>
+          <div class="col-text">
+            <h3>Impress Clients & Employees</h3>
+            <p>First impressions matter. Our commercial service keeps your waiting areas, lounges, and meeting rooms looking pristine. We work around your schedule to minimize disruption, delivering spotless results that reflect your professionalism.</p>
+            <ul class="feature-list">
+              <li><i class="fas fa-chart-line"></i> Minimal downtime, after-hours available</li>
+              <li><i class="fas fa-spray-can-sparkles"></i> Heavy-duty stain & soil removal</li>
+              <li><i class="fas fa-handshake"></i> Custom maintenance plans</li>
+              <li><i class="fas fa-certificate"></i> Trained commercial technicians</li>
+            </ul>
+            <a href="tel:+12155007939" class="btn-call" style="margin-top: 1.5rem; display: inline-block;"><i class="fas fa-building"></i> Request Commercial Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA with phone, email, and one antibacterial mention -->
+  <div class="bottom-cta">
+    <div class="container">
+      <h3>✨ Give Your Sofa the Care It Deserves ✨</h3>
+      <p>Serving Philadelphia, Blue Bell, Ambler & surrounding communities — fast, friendly, and thorough.</p>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+        <a href="tel:+12155007939" class="btn-call btn-outline-light" style="background: white; color:#2c7da0;"><i class="fas fa-phone-alt"></i> Call (215) 500-7939</a>
+        <a href="mailto:elitesofacleaning03@gmail.com" class="btn-call btn-outline-light" style="background: white; color:#2c7da0;"><i class="fas fa-envelope"></i> Email Us</a>
+      </div>
+      <p style="font-size: 0.9rem; margin-top: 0.5rem;"><i class="fas fa-shield-alt"></i> Antibacterial treatment available — for a healthier, fresher sofa</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p><i class="fas fa-couch"></i> Elite Sofa Cleaning — Where Sofas Get Their Beauty Back</p>
+      <p style="margin-top: 0.4rem;">📍 Philadelphia | Blue Bell | Ambler & Surrounding Areas</p>
+      <p style="margin-top: 0.4rem;">
+        <i class="fas fa-envelope"></i> <a href="mailto:elitesofacleaning03@gmail.com">elitesofacleaning03@gmail.com</a> &nbsp;|&nbsp;
+        <i class="fas fa-phone-alt"></i> <a href="tel:+12155007939">+1 (215) 500-7939</a>
+      </p>
+      <p style="margin-top: 1rem; font-size: 0.75rem;">© 2025 Elite Sofa Cleaning — Professional Upholstery Care</p>
+    </div>
+  </footer>
+</main>
+
+<script>
+  const heroSection = document.getElementById('hero-section');
+  const gallerySection = document.querySelector('.gallery');
+  const residentialDiv = document.getElementById('residential-section');
+  const commercialDiv = document.getElementById('commercial-section');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const logoContainer = document.querySelector('.logo');
+
+  function showHome() {
+    if (heroSection) heroSection.style.display = 'block';
+    if (gallerySection) gallerySection.style.display = 'block';
+    if (residentialDiv) residentialDiv.style.display = 'none';
+    if (commercialDiv) commercialDiv.style.display = 'none';
+    navLinks.forEach(link => {
+      const target = link.getAttribute('data-nav');
+      if (target === 'home') link.classList.add('active');
+      else link.classList.remove('active');
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showResidential() {
+    if (heroSection) heroSection.style.display = 'none';
+    if (gallerySection) gallerySection.style.display = 'none';
+    if (residentialDiv) residentialDiv.style.display = 'block';
+    if (commercialDiv) commercialDiv.style.display = 'none';
+    navLinks.forEach(link => {
+      const target = link.getAttribute('data-nav');
+      if (target === 'residential') link.classList.add('active');
+      else link.classList.remove('active');
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showCommercial() {
+    if (heroSection) heroSection.style.display = 'none';
+    if (gallerySection) gallerySection.style.display = 'none';
+    if (residentialDiv) residentialDiv.style.display = 'none';
+    if (commercialDiv) commercialDiv.style.display = 'block';
+    navLinks.forEach(link => {
+      const target = link.getAttribute('data-nav');
+      if (target === 'commercial') link.classList.add('active');
+      else link.classList.remove('active');
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const section = link.getAttribute('data-nav');
+      if (section === 'home') showHome();
+      else if (section === 'residential') showResidential();
+      else if (section === 'commercial') showCommercial();
+    });
+  });
+
+  if (logoContainer) {
+    logoContainer.style.cursor = 'pointer';
+    logoContainer.addEventListener('click', () => showHome());
+  }
+
+  showHome();
+</script>
+</body>
+</html>
